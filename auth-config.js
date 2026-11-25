@@ -1,4 +1,3 @@
-// Add your Supabase project's public URL and anon/publishable key here.
-// Never put a service_role or secret key in this browser-side file.
-window.FOODFINDER_SUPABASE_URL = "";
-window.FOODFINDER_SUPABASE_ANON_KEY = "";
+// Public URL and publishable key only. Never put a secret key here.
+window.FOODFINDER_SUPABASE_URL = "https://YOUR-PROJECT-ID.supabase.co";
+window.FOODFINDER_SUPABASE_ANON_KEY = "sb_publishable_VwrsvSzJf1CtCRtSJQoA6A_VGQCMOGx";
