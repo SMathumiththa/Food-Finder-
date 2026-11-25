@@ -174,6 +174,14 @@ function initNavigation() {
       mobileBtn.setAttribute("aria-expanded", String(open));
     });
   }
+  const actions = document.querySelector(".header-actions");
+  if (actions && !actions.querySelector(".auth-nav-link")) {
+    const authLink = document.createElement("a");
+    authLink.className = "btn btn-primary btn-sm auth-nav-link";
+    authLink.href = "auth.html";
+    authLink.textContent = "Sign in";
+    actions.insertBefore(authLink, mobileBtn || null);
+  }
   updateFavBadges();
 }
 
@@ -562,9 +570,11 @@ function initRecipesPage() {
 /* ==========================================================================
    Page: Recipe Details + Cooking Timer (recipe.html)
    ========================================================================== */
-function initRecipeDetailPage() {
+async function initRecipeDetailPage() {
   const container = document.getElementById("recipeDetailRoot");
   if (!container) return;
+
+  if (!window.foodFinderAuth || !(await window.foodFinderAuth.requireSession(container))) return;
 
   const params = new URLSearchParams(window.location.search);
   const recipeId = Number(params.get("id")) || 1;
