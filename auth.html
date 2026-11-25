@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FAF6EE" />
+  <title>Sign in — FoodFinder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="auth">
+  <main class="auth-page" id="authRoot">
+    <a class="auth-back-link" href="index.html">← Back to FoodFinder</a>
+    <button type="button" class="icon-btn auth-theme-toggle" id="themeToggleBtn" aria-label="Toggle color theme"></button>
+
+    <div class="auth-layout">
+      <section class="auth-visual" aria-label="FoodFinder kitchen">
+        <img src="images/kitchen-spread.jpg" alt="Fresh ingredients and spices ready for cooking" />
+        <div class="auth-visual-shade"></div>
+        <a href="index.html" class="brand-logo auth-brand">
+          <span class="brand-mark">FF</span>
+          <span>Food<span class="brand-accent">Finder</span></span>
+        </a>
+        <div class="auth-visual-copy">
+          <span class="auth-kicker">GOOD FOOD STARTS HERE</span>
+          <h1>Find your next<br />favourite meal.</h1>
+          <p>Browse freely. Sign in when you're ready to cook.</p>
+        </div>
+        <div class="auth-visual-note">
+          <span class="auth-note-dot"></span>
+          Simple ingredients. Lovely meals.
+        </div>
+      </section>
+
+      <section class="auth-panel">
+        <div class="auth-panel-inner">
+          <div class="auth-mobile-brand">
+            <span class="brand-mark">FF</span>
+            <span>Food<span class="brand-accent">Finder</span></span>
+          </div>
+          <div id="authForms">
+            <div class="auth-tabs" role="group" aria-label="Choose account action">
+              <button type="button" class="auth-tab" data-auth-mode="signup" aria-pressed="true">Create account</button>
+              <button type="button" class="auth-tab" data-auth-mode="login" aria-pressed="false">Sign in</button>
+            </div>
+
+            <div id="authEmailStep">
+              <span class="auth-kicker">YOUR KITCHEN, YOUR WAY</span>
+              <h2 id="authHeading">Join the table</h2>
+              <p class="auth-subheading" id="authSubheading">Create your account with a one-time email code.</p>
+
+              <form id="authEmailForm" data-auth-form>
+                <label for="authEmail">Email address</label>
+                <input class="form-input auth-input" type="email" id="authEmail" name="email" placeholder="you@example.com" autocomplete="email" required />
+                <button class="btn btn-primary auth-submit" id="authSendButton" type="submit">Create account</button>
+              </form>
+              <p class="auth-privacy-note">No password to remember. We’ll send a secure, one-time code to your inbox.</p>
+            </div>
+
+            <div id="authCodeStep" hidden>
+              <span class="auth-kicker">CHECK YOUR INBOX</span>
+              <h2>One little code.</h2>
+              <p class="auth-subheading">We sent a 6-digit sign-in code to <strong id="authSentTo"></strong>.</p>
+              <form id="authCodeForm" data-auth-form>
+                <label for="authCode">Email verification code</label>
+                <input class="form-input auth-input auth-code-input" type="text" id="authCode" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="000000" required />
+                <button class="btn btn-primary auth-submit" id="authVerifyButton" type="submit">Verify &amp; continue</button>
+              </form>
+              <button class="auth-text-button" type="button" id="authChangeEmail">Use a different email</button>
+            </div>
+
+            <div class="auth-message" id="authMessage" role="status" aria-live="polite" hidden></div>
+            <div class="auth-setup-notice" id="authSetupNotice" hidden>
+              <strong>One quick setup step</strong>
+              <p>Add your Supabase project URL and public anon key to <code>auth-config.js</code>. Then set the Supabase email template to show <code>{{ .Token }}</code> so the email contains a six-digit code.</p>
+            </div>
+          </div>
+
+          <div class="auth-signed-in" id="authSignedIn" hidden>
+            <span class="auth-kicker">YOU’RE SIGNED IN</span>
+            <h2>Welcome to the table.</h2>
+            <p class="auth-subheading">Your account is ready for recipe time.</p>
+            <p class="auth-account-email" id="authAccountEmail"></p>
+            <a class="btn btn-primary auth-submit" href="recipes.html">Browse recipes</a>
+            <button type="button" class="auth-text-button" id="authSignOut">Sign out</button>
+          </div>
+        </div>
+        <p class="auth-footer">Cook something good today. <span>FoodFinder</span></p>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
