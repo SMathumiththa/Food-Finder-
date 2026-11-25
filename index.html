@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodFinder — Smart Ingredient-Based Recipe Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-mark">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+            <path d="M6 17h12"/>
+          </svg>
+        </span>
+        <span>Food<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="finder.html" class="nav-link">Find Recipes</a>
+        <a href="recipes.html" class="nav-link">Recipes</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="favourites.html" class="nav-link">
+          Favourites <span class="fav-badge fav-count-badge" style="display:none;">0</span>
+        </a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="themeToggleBtn" aria-label="Toggle color theme"></button>
+        <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+            </svg>
+            Smart Kitchen Matching
+          </span>
+          <h1 class="hero-title">Turn Your Kitchen Ingredients Into <span>Delicious Meals</span></h1>
+          <p class="hero-desc">
+            Select the ingredients you already have at home and discover matching recipes instantly—complete with match percentages, missing items, and step-by-step timers.
+          </p>
+
+          <form class="hero-search" id="heroSearchForm">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input type="text" id="heroSearchInput" placeholder="Search recipes or ingredients (e.g. Fried Rice, Chicken)..." aria-label="Search recipes" />
+            <button type="submit" class="btn btn-primary btn-sm">Search</button>
+          </form>
+
+          <div class="hero-actions">
+            <a href="finder.html" class="btn btn-primary">
+              Find by Ingredients
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="recipes.html" class="btn btn-outline">Browse All Recipes</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>10+</strong>
+              <span>Curated Recipes</span>
+            </div>
+            <div class="stat-item">
+              <strong>4</strong>
+              <span>Meal Categories</span>
+            </div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Browser Offline Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-image-wrap">
+            <img src="images/hero-kitchen.jpg" alt="Fresh ingredients prepared in a warm home kitchen" />
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </div>
+            <div>
+              <strong>Smart Match Engine</strong>
+              <span>Shows exact % &amp; missing items</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Simple Process</span>
+            <h2 class="section-title">How FoodFinder Works</h2>
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-icon-row">
+              <span class="step-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                </svg>
+              </span>
+              <span class="step-num">01</span>
+            </div>
+            <h3>Pick Your Ingredients</h3>
+            <p>Select items sitting in your kitchen—like rice, eggs, tomatoes, or onions—using quick toggles or search.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-row">
+              <span class="step-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+              </span>
+              <span class="step-num">02</span>
+            </div>
+            <h3>Check Match Percentage</h3>
+            <p>FoodFinder ranks recipes by ingredient match percentage and clearly highlights any missing ingredients.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-row">
+              <span class="step-icon">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/>
+                </svg>
+              </span>
+              <span class="step-num">03</span>
+            </div>
+            <h3>Cook With Built-In Timer</h3>
+            <p>Follow clear step-by-step instructions, save favourites locally, and track cook times with our chime timer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Browse By Meal</span>
+            <h2 class="section-title">Explore Categories</h2>
+          </div>
+          <a href="recipes.html" class="btn btn-outline btn-sm">View All Categories</a>
+        </div>
+        <div class="categories-grid" id="homeCategoriesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Most Cooked</span>
+            <h2 class="section-title">Popular Recipes</h2>
+            <p class="section-subtitle">Everyday favourites loved by students and busy home cooks.</p>
+          </div>
+          <a href="recipes.html" class="btn btn-secondary btn-sm">See All 10 Recipes</a>
+        </div>
+        <div class="recipes-grid" id="popularRecipesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <h2>Not Sure What to Cook Tonight?</h2>
+            <p>Reduce food waste and save time—check what is already in your pantry and let FoodFinder suggest the closest meals.</p>
+          </div>
+          <a href="finder.html" class="btn btn-primary">
+            Open Ingredient Finder
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:#FAF6EE;">
+            <span class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+                <path d="M6 17h12"/>
+              </svg>
+            </span>
+            <span>Food<span class="brand-accent">Finder</span></span>
+          </a>
+          <p>Smart ingredient-based recipe discovery helping you cook smarter, save time, and reduce household food waste.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="finder.html">Ingredient Finder</a>
+            <a href="recipes.html">All Recipes</a>
+            <a href="gallery.html">Food Gallery</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="recipes.html?category=Breakfast">Breakfast</a>
+            <a href="recipes.html?category=Lunch">Lunch</a>
+            <a href="recipes.html?category=Dinner">Dinner</a>
+            <a href="recipes.html?category=Desserts">Desserts</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <div class="footer-links">
+            <a href="favourites.html">Saved Favourites</a>
+            <a href="about.html">About FoodFinder</a>
+            <a href="contact.html">Contact &amp; Feedback</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>FoodFinder — HNDIT1052 ICT Project</span>
+        <span>Built with HTML5, CSS3 &amp; Vanilla JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipes — FoodFinder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="recipes">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-mark">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+            <path d="M6 17h12"/>
+          </svg>
+        </span>
+        <span>Food<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="finder.html" class="nav-link">Find Recipes</a>
+        <a href="recipes.html" class="nav-link active">Recipes</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="favourites.html" class="nav-link">
+          Favourites <span class="fav-badge fav-count-badge" style="display:none;">0</span>
+        </a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="themeToggleBtn" aria-label="Toggle color theme"></button>
+        <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-banner">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Recipes</span>
+        </div>
+        <h1>Recipe Collection</h1>
+        <p>Search recipes by name or ingredient and filter across Breakfast, Lunch, Dinner, and Desserts.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-top-row">
+            <div class="input-with-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+              </svg>
+              <input type="text" id="recipeSearchInput" class="form-input" placeholder="Search by recipe name or ingredient..." aria-label="Search recipes" />
+            </div>
+
+            <select id="difficultyFilter" class="form-select" aria-label="Filter by difficulty">
+              <option value="All">All Difficulties</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+            </select>
+
+            <select id="sortSelect" class="form-select" aria-label="Sort recipes">
+              <option value="popular">Most Popular</option>
+              <option value="quickest">Quickest Cook Time</option>
+              <option value="az">Alphabetical (A–Z)</option>
+            </select>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+            <div class="filter-pills" id="categoryFilterPills">
+              <button type="button" class="filter-pill active" data-cat="All">All</button>
+              <button type="button" class="filter-pill" data-cat="Breakfast">Breakfast</button>
+              <button type="button" class="filter-pill" data-cat="Lunch">Lunch</button>
+              <button type="button" class="filter-pill" data-cat="Dinner">Dinner</button>
+              <button type="button" class="filter-pill" data-cat="Desserts">Desserts</button>
+            </div>
+            <span id="recipesCountLabel" style="font-size:0.88rem;color:var(--text-muted);font-weight:600;"></span>
+          </div>
+        </div>
+
+        <div class="recipes-grid" id="allRecipesGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:#FAF6EE;">
+            <span class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+                <path d="M6 17h12"/>
+              </svg>
+            </span>
+            <span>Food<span class="brand-accent">Finder</span></span>
+          </a>
+          <p>Smart ingredient-based recipe discovery helping you cook smarter, save time, and reduce household food waste.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="finder.html">Ingredient Finder</a>
+            <a href="recipes.html">All Recipes</a>
+            <a href="gallery.html">Food Gallery</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="recipes.html?category=Breakfast">Breakfast</a>
+            <a href="recipes.html?category=Lunch">Lunch</a>
+            <a href="recipes.html?category=Dinner">Dinner</a>
+            <a href="recipes.html?category=Desserts">Desserts</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <div class="footer-links">
+            <a href="favourites.html">Saved Favourites</a>
+            <a href="about.html">About FoodFinder</a>
+            <a href="contact.html">Contact &amp; Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>FoodFinder — HNDIT1052 ICT Project</span>
+        <span>Built with HTML5, CSS3 &amp; Vanilla JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

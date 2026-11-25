@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Details — FoodFinder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="recipe">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-mark">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+            <path d="M6 17h12"/>
+          </svg>
+        </span>
+        <span>Food<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="finder.html" class="nav-link">Find Recipes</a>
+        <a href="recipes.html" class="nav-link active">Recipes</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="favourites.html" class="nav-link">
+          Favourites <span class="fav-badge fav-count-badge" style="display:none;">0</span>
+        </a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="themeToggleBtn" aria-label="Toggle color theme"></button>
+        <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding-top:34px;">
+      <div class="container">
+        <div style="margin-bottom:22px;" class="no-print">
+          <a href="recipes.html" class="btn btn-ghost btn-sm">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Back to Recipes
+          </a>
+        </div>
+        <div id="recipeDetailRoot"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt no-print">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Keep Cooking</span>
+            <h2 class="section-title">More Recipes to Try</h2>
+          </div>
+          <a href="recipes.html" class="btn btn-outline btn-sm">All Recipes</a>
+        </div>
+        <div class="recipes-grid" id="relatedRecipesGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:#FAF6EE;">
+            <span class="brand-mark">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+                <path d="M6 17h12"/>
+              </svg>
+            </span>
+            <span>Food<span class="brand-accent">Finder</span></span>
+          </a>
+          <p>Smart ingredient-based recipe discovery helping you cook smarter, save time, and reduce household food waste.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="finder.html">Ingredient Finder</a>
+            <a href="recipes.html">All Recipes</a>
+            <a href="gallery.html">Food Gallery</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <div class="footer-links">
+            <a href="recipes.html?category=Breakfast">Breakfast</a>
+            <a href="recipes.html?category=Lunch">Lunch</a>
+            <a href="recipes.html?category=Dinner">Dinner</a>
+            <a href="recipes.html?category=Desserts">Desserts</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <div class="footer-links">
+            <a href="favourites.html">Saved Favourites</a>
+            <a href="about.html">About FoodFinder</a>
+            <a href="contact.html">Contact &amp; Feedback</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>FoodFinder — HNDIT1052 ICT Project</span>
+        <span>Built with HTML5, CSS3 &amp; Vanilla JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
